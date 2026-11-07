@@ -1,0 +1,15 @@
+{
+  "name": "Grip - medial elbow protocol",
+  "short_name": "Grip",
+  "description": "A twelve week loading plan for golfer's elbow, with a daily prescription and a pain ledger.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#e9eae4",
+  "theme_color": "#e9eae4",
+  "icons": [
+    { "src": "assets/icon-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-1024.png", "sizes": "1024x1024", "type": "image/png", "purpose": "maskable" }
+  ]
+}

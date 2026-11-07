@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grip - medial elbow protocol</title>
+<meta name="description" content="A twelve week loading plan for golfer's elbow. Daily prescription, pain tracking, streak and ledger. Runs on your phone, stores nothing on a server.">
+<meta name="theme-color" content="#e9eae4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101210" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Grip">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="icon" href="assets/icon-32.png" sizes="32x32">
+<link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="bar">
+  <a class="mark" href="#today" aria-label="Grip, back to today">Grip</a>
+  <div class="bar-right">
+    <span class="streak" id="streakChip" hidden>
+      <span class="ico" style="--i:url(assets/icons/flame.svg)"></span>
+      <span id="streakNum">0</span>
+    </span>
+    <button class="iconbtn" id="themeBtn" type="button" aria-label="Change theme">
+      <span class="ico" style="--i:url(assets/icons/moon.svg)"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="view" id="view-today" role="tabpanel" aria-labelledby="tab-today">
+    <div id="todayMount"></div>
+  </section>
+
+  <section class="view" id="view-plan" role="tabpanel" aria-labelledby="tab-plan" hidden>
+    <div class="lede">
+      <h1>Twelve weeks</h1>
+      <p>Three gears, one habit. The dose changes. Showing up does not.</p>
+    </div>
+
+    <div class="ruler-wrap">
+      <div class="ruler" id="ruler" aria-label="Program weeks"></div>
+    </div>
+
+    <div id="phaseMount"></div>
+
+    <h2 class="h2" id="movements">The movements</h2>
+    <div id="libraryMount"></div>
+
+    <p class="note">Progress by adding weight, not reps, once the top of the range feels like a 6 out of 10 effort. Two pounds is a real jump. If a joint complains rather than the tendon, change the angle before you change the plan.</p>
+  </section>
+
+  <section class="view" id="view-learn" role="tabpanel" aria-labelledby="tab-learn" hidden>
+    <div class="lede">
+      <h1>What you are fixing</h1>
+      <p>Not inflammation. A tendon that met more load than it could take, and now needs building back up.</p>
+    </div>
+
+    <article class="sheet">
+      <h2>The short version</h2>
+      <p>The muscles that curl your wrist and close your fingers anchor onto a bony bump on the inside of your elbow. That shared anchor is the common flexor origin. When gripping, lifting and twisting outrun what it can take, the tendon gets sore to press, sore to load, and sore the day after a big session.</p>
+      <p>It is usually not inflamed, which is why rest alone stalls. Tendons answer to progressive load. You are not resting it better, you are teaching it to tolerate more.</p>
+    </article>
+
+    <article class="sheet">
+      <h2>Three rules that decide everything</h2>
+      <div class="rule"><span class="rn">01</span><p><b>Keep it at 3 out of 10 or less</b> during exercise. A dull ache is allowed. Sharp is not.</p></div>
+      <div class="rule"><span class="rn">02</span><p><b>No worse the next morning.</b> If it is, you overdid it. Drop a set or a few pounds and continue.</p></div>
+      <div class="rule"><span class="rn">03</span><p><b>Read it in weeks.</b> The line should fall over two to three week blocks. Day to day noise means nothing.</p></div>
+    </article>
+
+    <article class="sheet">
+      <h2>Load management, concretely</h2>
+      <ul class="list">
+        <li>Straps on pulls above half your usual weight.</li>
+        <li>Neutral grip instead of palm up. Hammer curls before barbell curls.</li>
+        <li>Cut pulling volume by about a third for two weeks.</li>
+        <li>Wear a counterforce strap just below the elbow for long gripping work.</li>
+        <li>Warm the forearm up before anything heavy. Two minutes is enough.</li>
+        <li>Do not stretch it hard. Tight is an irritated tendon, not a short muscle.</li>
+      </ul>
+    </article>
+
+    <article class="sheet flag">
+      <h2>Stop and get it looked at if</h2>
+      <ul class="list">
+        <li>You cannot fully straighten or bend the arm.</li>
+        <li>Ring and pinky fingers go numb, or you are dropping things.</li>
+        <li>The elbow is hot, red and swollen, or you have a fever.</li>
+        <li>Pain wakes you at night or climbs week after week.</li>
+        <li>It began with a pop and there is bruising.</li>
+      </ul>
+    </article>
+
+    <h2 class="h2">Watch</h2>
+    <div id="videoMount"></div>
+
+    <h2 class="h2">Asked and answered</h2>
+    <div id="faqMount"></div>
+
+    <p class="note">General education, not medical advice, and not a diagnosis. If it is not clearly better after four to six weeks of consistent loading, see a physical therapist or an orthopedist.</p>
+  </section>
+
+  <section class="view" id="view-log" role="tabpanel" aria-labelledby="tab-log" hidden>
+    <div class="lede">
+      <h1>The ledger</h1>
+      <p>Sessions, streak and the pain line. Stored on this phone, nowhere else.</p>
+    </div>
+    <div id="logMount"></div>
+  </section>
+
+</main>
+
+<nav class="dock" aria-label="Sections">
+  <button class="tab is-on" id="tab-today" type="button" data-tab="today" aria-selected="true" aria-controls="view-today">
+    <span class="ico" style="--i:url(assets/icons/list-checks.svg)"></span><span>Today</span>
+  </button>
+  <button class="tab" id="tab-plan" type="button" data-tab="plan" aria-selected="false" aria-controls="view-plan">
+    <span class="ico" style="--i:url(assets/icons/barbell.svg)"></span><span>Program</span>
+  </button>
+  <button class="tab" id="tab-learn" type="button" data-tab="learn" aria-selected="false" aria-controls="view-learn">
+    <span class="ico" style="--i:url(assets/icons/book-open-text.svg)"></span><span>Learn</span>
+  </button>
+  <button class="tab" id="tab-log" type="button" data-tab="log" aria-selected="false" aria-controls="view-log">
+    <span class="ico" style="--i:url(assets/icons/chart-line-up.svg)"></span><span>Log</span>
+  </button>
+</nav>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
