@@ -447,6 +447,7 @@
     }
 
     el("todayMount").innerHTML = html;
+    updateChip();
   }
 
   /* ---------- plan ---------- */
@@ -629,9 +630,17 @@
       if (doneNow && !had) {
         toast("Session filed. That is the whole job for today.");
         renderToday();
+      } else if (had) {
+        const order = document.querySelector(".order");
+        if (order) {
+          order.classList.remove("is-filed");
+          const stamp = order.querySelector(".filed");
+          if (stamp) stamp.remove();
+        }
+        updateTally();
+        updateChip();
       } else {
         updateTally();
-        if (had) item.querySelector(".stamp-btn").setAttribute("aria-label", `${EX[id].name}`);
       }
       return;
     }
@@ -686,6 +695,13 @@
     if (count) count.textContent = `${tasks.filter((t) => done.includes(t.id)).length}/${tasks.length}`;
   }
 
+  function updateChip() {
+    const s = stats();
+    const chip = el("streakChip");
+    chip.hidden = s.streak === 0;
+    el("streakNum").textContent = String(s.streak);
+  }
+
   el("themeBtn").addEventListener("click", () => {
     const order = ["auto", "light", "dark"];
     const now = order.indexOf(state.theme || "auto");
@@ -710,12 +726,6 @@
   renderLearn();
   show("today");
 
-  const s0 = stats();
-  const chip = el("streakChip");
-  if (s0.streak > 0) {
-    chip.hidden = false;
-    el("streakNum").textContent = String(s0.streak);
-  }
 
   window.addEventListener("storage", (e) => {
     if (e.key === STORE) {
